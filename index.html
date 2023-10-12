@@ -32,40 +32,74 @@
         <div class="navbar-nav">
           <!-- NAVLINKS -->
           <a href="#/about" class="nav-link">About</a>
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#pokemonList"
+            aria-controls="pokemonList">
+            Caught Pokemon
+          </button>
         </div>
       </div>
       <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
     </nav>
   </header>
 
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="pokemonList" aria-labelledby="pokemonListLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="pokemonListLabel">Caught Pokemon</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div id="caughtPokemon" class="offcanvas-body">
+      <!-- <div class="mb-2 card text-center">
+        ${this.name}
+      </div> -->
+    </div>
+  </div>
+
   <!-- SECTION -->
   <main>
 
-    <section id="auth-template">
-      <!-- TODO REMOVE THE AUTH TEMPLATE ONCE YOU VERIFY YOUR AUTH SETTINGS -->
-      <div class="container-fluid">
-        <div class="row my-3">
-          <div class="col-lg-5" id="auth-settings">
-            <div class="card p-2 skeleton-loader">
-              <div class="card-title p-2">
-                <div class="d-flex align-items-center">
-                  <div class="skeleton-loader avatar"></div>
-                  <div class="skeleton-loader text mx-2"></div>
-                </div>
-              </div>
-              <div class="card-body border-top">
-                <div class="skeleton-loader text block"></div>
-                <div class="skeleton-loader text block"></div>
-                <div class="skeleton-loader text block"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section id="router-view">
       <!-- primary viewport -->
+      <div class="container-fluid">
+        <section class="row text-center">
+
+          <!-- SECTION INDIVIDUAL POKEMON INFO -->
+          <div class="col-8">
+            <h1>POKEMON INFO COLUMN</h1>
+            <section id="activePokemon" class="row">
+              <!-- <div class="col-12 p-3">
+                <div class="card">
+                  ${this.name}
+                </div>
+                <img src="${this.img}" alt="${this.name}">
+              </div>
+              <div class="col-12">
+                <div class="card">
+                  <p>Height: ${this.height}</p>
+                  <p>Weight: ${this.weight}</p>
+                  <p>Types: ${this.types}</p>
+                </div>
+              </div> -->
+            </section>
+          </div>
+          <!-- SECTION INDIVIDUAL POKEMON INFO -->
+
+          <!-- SECTION LIST OF POKEMON -->
+          <div class="col-4">
+            <h1>POKEMON LIST</h1>
+            <section class="row">
+              <div class="col-12">
+                <div id="wildPokemon" class="card py-3">
+
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- SECTION LIST OF POKEMON -->
+
+        </section>
+      </div>
     </section>
 
 
