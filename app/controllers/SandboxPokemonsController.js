@@ -6,13 +6,13 @@ import { setHTML } from "../utils/Writer.js";
 function _drawCaughtPokemon() {
   const myPokemon = AppState.myPokemon
   let content = ''
-  myPokemon.forEach(pokemon => pokemon.caughtTemplate)
+  myPokemon.forEach(pokemon => content += pokemon.caughtTemplate)
   setHTML('caughtPokemon', content)
 }
 
 export class SandboxPokemonsController {
   constructor() {
-    AppState.on('account', _drawCaughtPokemon)
+    AppState.on('account', this.getCaughtPokemon)
     AppState.on('myPokemon', _drawCaughtPokemon)
   }
 
